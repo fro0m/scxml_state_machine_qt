@@ -1,3 +1,21 @@
-<?xml version="1.0" ?>
-<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" name="StateMachine">
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="StateMachine" qt:editorversion="4.2.1" initial="connected">
+    <qt:editorinfo initialGeometry="150.77;147.71;-20;-20;40;40"/>
+    <state id="connected">
+        <qt:editorinfo geometry="211.89;253.66;121.72;52.50;297.56;172" scenegeometry="211.89;253.66;333.61;306.16;297.56;172"/>
+        <transition type="external" event="connect" target="disconnected"/>
+        <onentry>
+            <send event="quit" delay="5s"/>
+        </onentry>
+        <transition type="external" event="quit" target="Final_1"/>
+    </state>
+    <state id="disconnected">
+        <qt:editorinfo geometry="640.77;852.66;-60;-50;120;100" scenegeometry="640.77;852.66;580.77;802.66;120;100"/>
+        <transition type="external" event="disconnect" target="connected">
+            <qt:editorinfo localGeometry="3.06;-169.10;12.22;-404.66"/>
+        </transition>
+    </state>
+    <final id="Final_1">
+        <qt:editorinfo geometry="243.47;782.37;-20;-20;40;40" scenegeometry="243.47;782.37;223.47;762.37;40;40"/>
+    </final>
 </scxml>
